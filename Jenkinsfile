@@ -6,11 +6,18 @@ pipeline {
                 script{
                     checkout([$class: 'GitSCM', branches: [[name: '*/master']],
                     userRemoteConfigs:[[
-                        credentialsId: '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', 
-                           url: 'https://github.com/mariem-web/cdd.git']]])
+                        credentialsId: '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', 
+                           url: 'https://github.com/mariem-web/projet-cd.git']]])
                    }
                 }
              }
+      stage('Build'){
+            steps{
+                script{ 
+                    sh "ansible-playbook Ansible/build.yml -i Ansible/inventory/host.yml -e ansible_become_password=123"
+                }
+            }
+            }
          }
          
          }
