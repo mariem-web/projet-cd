@@ -1,0 +1,15 @@
+---
+# tasks file for docker-registry
+
+- name: login
+  docker_login:
+    #email: "mariem.khlifi@esprit.tn"
+    username: "mariam1212121121"
+    password: "Mar333444"
+    reauthorize: yes
+- name: docker push
+  docker_image:
+    name: devops:latest
+    repository: mariam1212121121/lcmariem
+    push: yes
+    source: local 
