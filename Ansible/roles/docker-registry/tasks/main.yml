@@ -9,7 +9,7 @@
     reauthorize: yes
 - name: docker push
   docker_image:
-    name: devops:latest
+    name: appfront:latest
     repository: mariam1212121121/lcmariem
     push: yes
     source: local 
